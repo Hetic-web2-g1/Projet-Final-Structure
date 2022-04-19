@@ -1,22 +1,26 @@
 # Projet-Final-Structure
 
-$ docker build -t my-python-app .
-$ docker run -it --rm --name my-running-app my-python-app
+Launch docker config
 
-docker compose up
-python main.py
+> docker-compose up
 
-<!-- docker-compose --env-file .env config
-docker-compose --env-file .env up -->
+Access backend: http://localhost:5226
 
-poetry shell package manager
-sql alchemy
+Launch frontend
 
-DB: http://localhost:8080
-/frontend -> npm run dev
+> /frontend -> npm run dev
+
 Front: http://localhost:3000
-Backend: http://localhost:5226
-from pydantic import BaseSettings
+
+Access DB: http://localhost:8080
+
+- System: PostgreSQL
+- Server: db
+- username: flamingo
+- password: zeremi
+
+<!-- sql alchemy -->
+<!-- from pydantic import BaseSettings
 
 class Config(BaseSettings):
 origin_email: str
@@ -26,4 +30,7 @@ database_url: str
     class Config:
         env_file = '.env'
 
-settings = Config()
+settings = Config() -->
+
+<!-- docker-compose --env-file .env config
+docker-compose --env-file .env up -->

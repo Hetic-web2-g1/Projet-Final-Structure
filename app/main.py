@@ -1,7 +1,9 @@
 from typing import Optional
-
 from fastapi import FastAPI
+from db.session import engine, metadata
 
+
+metadata.create_all(bind=engine)
 app = FastAPI()
 
 

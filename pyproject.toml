@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "project"
+description = "project w2"
+version = "0.1.0"
+authors = ["domino659 <martin@sionfamily.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10.4"
+
+[tool.poetry.dev-dependencies]
+fastapi = "*"
+pydantic = "*"
+uvicorn = "*"
+sqlalchemy = "*"

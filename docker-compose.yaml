@@ -1,7 +1,7 @@
 version: "3.1"
 
 services:
-  back:
+  backend:
     build: .
     volumes:
       - .:/code
@@ -16,8 +16,8 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: flamingo
+      POSTGRES_PASSWORD: zeremi
     volumes:
       # Pour lancer un dump automatiquement au montage du conteneur
       - ./database/dump.sql:/docker-entrypoint-initdb.d/database.sql
