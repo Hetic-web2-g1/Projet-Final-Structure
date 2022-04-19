@@ -1,0 +1,31 @@
+version: "3.1"
+
+services:
+  back:
+    build: .
+    volumes:
+      - .:/code
+    env_file:
+      - ./env/.env
+    ports:
+      - 5226:5226
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      # Pour lancer un dump automatiquement au montage du conteneur
+      - ./database/dump.sql:/docker-entrypoint-initdb.d/database.sql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
