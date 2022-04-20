@@ -1,3 +1,18 @@
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_*
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environments
+.env
+env/
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -36,7 +51,3 @@ MANIFEST
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
-
-# Environments
-.env
-env/
