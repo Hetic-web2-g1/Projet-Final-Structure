@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 
-load_dotenv("../env/.env")
+load_dotenv("env/.env")
 
 db_type = os.environ['DB_TYPE']
 db_url = os.environ['DB_URL']

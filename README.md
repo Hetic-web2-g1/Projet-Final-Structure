@@ -34,3 +34,8 @@ settings = Config() -->
 
 <!-- docker-compose --env-file .env config
 docker-compose --env-file .env up -->
+
+fastapi
+sqlalchemy
+python-dotenv
+psycopg2

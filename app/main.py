@@ -1,6 +1,8 @@
 from typing import Optional
 from fastapi import FastAPI
-# from database.engine import engine
+from database import engine
+
+engine.connect()
 
 app = FastAPI()
 

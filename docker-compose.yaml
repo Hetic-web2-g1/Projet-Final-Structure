@@ -20,7 +20,7 @@ services:
       POSTGRES_PASSWORD: zeremi
     volumes:
       # Pour lancer un dump automatiquement au montage du conteneur
-      - ./database/dump.sql:/docker-entrypoint-initdb.d/database.sql
+      - ./app/database/dump.sql:/docker-entrypoint-initdb.d/database.sql
 
   adminer:
     image: adminer
