@@ -1,15 +1,13 @@
 from typing import Optional
 from fastapi import FastAPI
-from db.session import engine, metadata
+# from database.engine import engine
 
-
-metadata.create_all(bind=engine)
 app = FastAPI()
 
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Hello"}
 
 
 @app.get("/items/{item_id}")

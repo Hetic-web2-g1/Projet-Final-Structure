@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS DbProjetFinal;
-CREATE DATABASE DbProjetFinal ENCODING 'utf8';
+DROP DATABASE IF EXISTS who_got_next;
+CREATE DATABASE who_got_next ENCODING 'utf8';
 -- Need to convert to postgre
--- CREATE TABLE IF NOT EXISTS DbProjetFinal.author (
+-- CREATE TABLE IF NOT EXISTS who_got_next.author (
 --     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 --     username VARCHAR(30) NOT NULL,
 --     isAdmin BOOLEAN NOT NULL,
