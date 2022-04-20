@@ -1,15 +1,15 @@
 from typing import Optional
 from fastapi import FastAPI
-from database import engine
+from database.engine import *
 
-engine.connect()
+msg = connect()
 
 app = FastAPI()
 
 
 @app.get("/")
 def read_root():
-    return {"Hello"}
+    return {"Backend"}
 
 
 @app.get("/items/{item_id}")

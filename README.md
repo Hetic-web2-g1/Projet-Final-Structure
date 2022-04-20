@@ -4,11 +4,19 @@ Launch docker config
 
 > docker-compose up
 
-Access backend: http://localhost:5226
+Launch backend
+
+> /app -> uvicorn main:app --reload
 
 Launch frontend
 
 > /frontend -> npm run dev
+
+Access backend dev: http://localhost:8000
+
+<!-- Access backend prod: http://localhost:5226 -->
+
+Access FastApi docs: http://127.0.0.1:8000/docs
 
 Front: http://localhost:3000
 
@@ -19,23 +27,6 @@ Access DB: http://localhost:8080
 - username: flamingo
 - password: zeremi
 
-<!-- sql alchemy -->
-<!-- from pydantic import BaseSettings
+Install requirement (for dev):
 
-class Config(BaseSettings):
-origin_email: str
-origin_pass: str
-database_url: str
-
-    class Config:
-        env_file = '.env'
-
-settings = Config() -->
-
-<!-- docker-compose --env-file .env config
-docker-compose --env-file .env up -->
-
-fastapi
-sqlalchemy
-python-dotenv
-psycopg2
+> pip install fastapi sqlalchemy python-dotenv psycopg2
