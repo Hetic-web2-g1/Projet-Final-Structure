@@ -27,11 +27,9 @@ Access DB: http://localhost:8080
 - username: flamingo
 - password: zeremi
 
-<!-- Install requirement (for dev) with pipenv:
-
-<!-- pipenv shell -->
-
-<!-- > pipenv install fastapi uvicorn sqlalchemy sqlalchemy_utils python-dotenv psycopg2 --> -->
+Install requirement (for dev) with pipenv:
+pipenv install requests
+pipenv shell
 
 Install requirement (for dev) without pipenv:
 
