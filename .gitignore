@@ -12,3 +12,5 @@
 # Environments
 .env
 env/
+Pipfile
+Pipfile.lock

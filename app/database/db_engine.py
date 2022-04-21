@@ -9,6 +9,7 @@ engine = create_engine(
     db_info_local,
     pool_size=10,
     max_overflow=0,
+    connect_args={"options": "-c timezone=utc"}
 )
 
 if not database_exists(engine.url):
@@ -30,3 +31,7 @@ if not engine.dialect.has_table(engine.connect(), "user"):
 
 
 metadata.create_all(bind=engine)
+
+
+# POSTIT
+# nullable=True Null allowed in db
