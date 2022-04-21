@@ -1,12 +1,6 @@
-from lib2to3.pgen2.token import STRING
-from sqlite3 import Timestamp
-from time import time
-from xmlrpc.client import Boolean
-from sqlalchemy import Table, Column, Integer, String, Boolean, DateTime, Float, ARRAY
+from sqlalchemy import Table, Column, Integer, String, DateTime, Boolean, ARRAY
 from database.db_engine import metadata
 from datetime import datetime
-...
-# model_object.updated_at = datetime.now(timezone.utc)
 
 def create_user():
     user = Table(
@@ -21,9 +15,24 @@ def create_user():
             Column('sport_level', Integer),
             Column('favorite', ARRAY(String(255), dimensions=1)),
             Column('date_of_birth', DateTime()),
-            Column("latitude", Integer),
-            Column("longitude", Integer),
+            Column('location', ARRAY(Integer, dimensions=1)),
             Column('img_path', String(255)),
             Column("created_at", DateTime(), default=datetime.utcnow),
             Column("edited_at", DateTime(), default=datetime.utcnow)
         )
+
+def create_current_user():
+    current_user = Table(
+        "current_user",
+        metadata,
+        Column('id', Integer, primary_key=True),
+        Column('current_user', ARRAY(Integer(), dimensions=1)),
+    )
+
+def create_subscribed_user():
+    subscribed_user = Table(
+        "subscribed_user",
+        metadata,
+        Column('id', Integer, primary_key=True),
+        Column('subscribed_user', ARRAY(Integer(), dimensions=1)),    
+    )

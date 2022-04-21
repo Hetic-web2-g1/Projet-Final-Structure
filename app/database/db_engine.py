@@ -24,14 +24,22 @@ except SQLAlchemyError as err:
 
 metadata = MetaData()
 
-from database.models.user import create_user
+from database.models.user import create_user, create_current_user, create_subscribed_user
+from database.models.field import create_field
+from database.models.event import create_event
+from database.models.message import create_message
 
 if not engine.dialect.has_table(engine.connect(), "user"):
     create_user()
-
+if not engine.dialect.has_table(engine.connect(), "current_user"):
+    create_current_user()
+if not engine.dialect.has_table(engine.connect(), "subscribed_user"):
+    create_subscribed_user()
+if not engine.dialect.has_table(engine.connect(), "field"):
+    create_field()  
+if not engine.dialect.has_table(engine.connect(), "event"):
+    create_event()
+if not engine.dialect.has_table(engine.connect(), "message"):
+    create_message()
 
 metadata.create_all(bind=engine)
-
-
-# POSTIT
-# nullable=True Null allowed in db
