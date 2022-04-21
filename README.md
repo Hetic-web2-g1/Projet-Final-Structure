@@ -34,3 +34,5 @@ pipenv shell
 Install requirement (for dev) without pipenv:
 
 > pip install fastapi uvicorn sqlalchemy sqlalchemy_utils python-dotenv psycopg2
+
+Fichier env/.env
