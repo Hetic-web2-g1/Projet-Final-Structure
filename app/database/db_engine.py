@@ -1,13 +1,7 @@
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.exc import SQLAlchemyError
-# from utils.env import *
+from utils.env import *
 from utils.log import *
-
-db_type="postgresql"
-db_url="localhost:5432"
-db_user="flamingo"
-db_pswd="zeremi"
-db_name="who_got_next"
 
 def connect():
     db_info = f"{db_type}://{db_user}:{db_pswd}@{db_url}/{db_name}"

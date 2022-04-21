@@ -1,6 +1,6 @@
 from typing import Optional
 from fastapi import FastAPI
-from database.engine import *
+from database.db_engine import *
 
 msg = connect()
 

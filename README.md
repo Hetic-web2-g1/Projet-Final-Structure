@@ -29,4 +29,4 @@ Access DB: http://localhost:8080
 
 Install requirement (for dev):
 
-> pip install fastapi sqlalchemy python-dotenv psycopg2
+> pip install fastapi uvicorn sqlalchemy python-dotenv psycopg2
