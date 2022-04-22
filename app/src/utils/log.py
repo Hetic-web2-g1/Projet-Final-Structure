@@ -1,11 +1,16 @@
+# Flexible event logging system
 import logging
-# Logging is a flexible event logging system
+from pathlib import Path
 
-# Logging setting
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+
+# Logging setting and creation of log file
 logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    filename=BASE_DIR / 'backend.log',
+                    )
 
-logging.info("Logging is activated.")
+logging.info("Log are activated.")
 
 # logging.debug("La fonction a bien été exécutée")
 # logging.info("Message d'information général")

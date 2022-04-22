@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+
 from src.utils.log import *
 
 # Load env variable from env file

@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy_utils import database_exists, create_database
 from sqlalchemy.exc import SQLAlchemyError
+
 from src.utils.log import logging
 from src.utils.env import *
 
@@ -29,10 +30,10 @@ except SQLAlchemyError as err:
 # Creation of metadata
 metadata = MetaData()
 
-from src.database.models.user import create_user, create_current_user, create_subscribed_user
-from src.database.models.field import create_field
-from src.database.models.event import create_event
-from src.database.models.message import create_message
+from src.database.schema.user import create_user, create_current_user, create_subscribed_user
+from src.database.schema.field import create_field
+from src.database.schema.event import create_event
+from src.database.schema.message import create_message
 
 # Check existence of tables, if not will create them
 if not engine.dialect.has_table(engine.connect(), "user"):

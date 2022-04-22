@@ -1,5 +1,6 @@
 from typing import Optional
 from fastapi import FastAPI
+
 from src.database.db_engine import *
 
 # Launch api
