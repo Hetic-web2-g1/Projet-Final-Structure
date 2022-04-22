@@ -1,5 +1,7 @@
 import logging
+# Logging is a flexible event logging system
 
+# Logging setting
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 

@@ -1,6 +1,6 @@
 from sqlalchemy import Table, Column, Integer, String, DateTime, Boolean, ARRAY
-from database.db_engine import metadata
 from datetime import datetime
+from src.database.db_engine import metadata
 
 def create_user():
     user = Table(

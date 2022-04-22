@@ -1,9 +1,11 @@
 from dotenv import load_dotenv
 import os
-from utils.log import *
+from src.utils.log import *
 
+# Load env variable from env file
 load_dotenv("../env/.env")
 
+# Set env variable
 db_type = os.environ['DB_TYPE']
 db_url = os.environ['DB_URL']
 db_user = os.environ['DB_USER']
