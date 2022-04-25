@@ -27,12 +27,12 @@ Access DB: http://localhost:8080
 - username: flamingo
 - password: zeremi
 
-Install requirement (for dev) with pipenv:
-pipenv install requests
-pipenv shell
+Install requirement (for dev) without poetry:
 
-Install requirement (for dev) without pipenv:
+> pip install fastapi uvicorn pydantic sqlalchemy sqlalchemy_utils python-dotenv psycopg2
 
-> pip install fastapi uvicorn sqlalchemy sqlalchemy_utils python-dotenv psycopg2
+Can also install with poetry and the pyproject.toml file.
+- poetry shell
 
+Ne pas oublier de rajouter: 
 Fichier env/.env
