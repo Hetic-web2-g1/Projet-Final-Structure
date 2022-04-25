@@ -6,11 +6,11 @@ Launch docker config
 
 Launch backend
 
-> /app -> uvicorn main:app --reload
+> cd app && uvicorn main:app --reload
 
 Launch frontend
 
-> /frontend -> npm run dev
+> cd frontend && npm run dev
 
 Access backend dev: http://localhost:8000
 
