@@ -14,8 +14,6 @@ engine = create_engine(
     connect_args={"options": "-c timezone=utc"}
 )
 
-conn = engine.connect
-
 # Check existence of db, if not will create it
 if not database_exists(engine.url):
     create_database(engine.url)
@@ -27,15 +25,15 @@ try:
     logging.info("DB connection success")
 except SQLAlchemyError as err:
     engine.connect()
-    logging.error("Error", err.__cause__)        
+    logging.error("Error", err.__cause__)     
 
 # Creation of metadata
 metadata = MetaData()
 
 from src.database.schema.user import user, current_user, subscribed_user
-from src.database.schema.field import *
-from src.database.schema.event import *
-from src.database.schema.message import *
+from src.database.schema.field import field
+from src.database.schema.event import event
+from src.database.schema.message import message
 
 # # Check existence of tables, if not will create them
 # if not engine.dialect.has_table(engine.connect(), "user"):

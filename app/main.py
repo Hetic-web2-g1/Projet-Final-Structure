@@ -6,6 +6,11 @@ from src.database.db_engine import metadata, engine
 
 metadata.create_all(bind=engine)
 
+from src.manager.user_manager import create_user
+# conn = engine.connect()
+with engine.begin() as conn:
+    create_user(conn)
+
 # Launch api
 app = FastAPI()
 
