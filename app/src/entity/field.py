@@ -16,3 +16,8 @@ class Field:
     img_path: str
     created_at: datetime = datetime.utcnow()
     edited_at: datetime = datetime.utcnow()
+
+class FieldCreate(Field):
+    id: int
+    created_at: datetime = datetime.utcnow()
+    edited_at: datetime = datetime.utcnow()

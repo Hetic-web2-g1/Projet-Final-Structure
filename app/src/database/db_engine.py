@@ -30,30 +30,29 @@ except SQLAlchemyError as err:
 # Creation of metadata
 metadata = MetaData()
 
-from src.database.schema.user import create_user, create_current_user, create_subscribed_user
-from src.database.schema.field import create_field
-from src.database.schema.event import create_event
-from src.database.schema.message import create_message
+from src.database.schema.user import user, current_user, subscribed_user
+from src.database.schema.field import *
+from src.database.schema.event import *
+from src.database.schema.message import *
 
-# Check existence of tables, if not will create them
-if not engine.dialect.has_table(engine.connect(), "user"):
-    create_user()
-    logging.info("Table user created")
-if not engine.dialect.has_table(engine.connect(), "field"):
-    create_field()
-    logging.info("Table field created")
-if not engine.dialect.has_table(engine.connect(), "event"):
-    create_event()
-    logging.info("Table event created")
-if not engine.dialect.has_table(engine.connect(), "message"):
-    create_message()
-    logging.info("Table message created")
-if not engine.dialect.has_table(engine.connect(), "current_user"):
-    create_current_user()
-    logging.info("Table current_user created")
-if not engine.dialect.has_table(engine.connect(), "subscribed_user"):
-    create_subscribed_user()
-    logging.info("Table subscribed_user created")
+# # Check existence of tables, if not will create them
+# if not engine.dialect.has_table(engine.connect(), "user"):
+#     create_user()
+#     logging.info("Table user created")
+# if not engine.dialect.has_table(engine.connect(), "field"):
+#     create_field()
+#     logging.info("Table field created")
+# if not engine.dialect.has_table(engine.connect(), "event"):
+#     create_event()
+#     logging.info("Table event created")
+# if not engine.dialect.has_table(engine.connect(), "message"):
+#     create_message()
+#     logging.info("Table message created")
+# if not engine.dialect.has_table(engine.connect(), "current_user"):
+#     create_current_user()
+#     logging.info("Table current_user created")
+# if not engine.dialect.has_table(engine.connect(), "subscribed_user"):
+#     create_subscribed_user()
+#     logging.info("Table subscribed_user created")
 
 # Create all tables stored in metadata
-metadata.create_all(bind=engine)

@@ -14,5 +14,8 @@ class Field:
     date_of_birth: datetime
     location: List[int]
     img_path: str
+
+class FieldCreate(Field):
+    id: int
     created_at: datetime = datetime.utcnow()
     edited_at: datetime = datetime.utcnow()
