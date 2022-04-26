@@ -14,6 +14,8 @@ engine = create_engine(
     connect_args={"options": "-c timezone=utc"}
 )
 
+conn = engine.connect
+
 # Check existence of db, if not will create it
 if not database_exists(engine.url):
     create_database(engine.url)

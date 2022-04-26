@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import List
 
 @dataclass
-class Field:
+class User:
     is_admin: bool
     pseudo: str
     password: str
@@ -15,7 +15,7 @@ class Field:
     location: List[int]
     img_path: str
 
-class FieldCreate(Field):
+class UserCreate(User):
     id: int
     created_at: datetime = datetime.utcnow()
     edited_at: datetime = datetime.utcnow()
