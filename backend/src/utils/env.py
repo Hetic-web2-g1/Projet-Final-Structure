@@ -1,14 +1,17 @@
-from dotenv import load_dotenv
+from pydantic import BaseSettings
 import os
 
-from src.utils.log import *
+# Pydantic BaseSetting, permet de declarer un mapping du `.env` .
+# En donnant le chemin d'acces au fichier .env, pydantic gère l'import des variables.
 
-# Load env variable from env file
-load_dotenv("../env/.env")
 
-# Set env variable
-db_type = os.environ['DB_TYPE']
-db_url = os.environ['DB_URL']
-db_user = os.environ['DB_USER']
-db_pswd = os.environ['DB_PSWD']
-db_name = os.environ['DB_NAME']
+class Settings(BaseSettings):
+    environment: str
+    database_url: str
+
+    class Config:
+        environment = os.environ['ENVIRONMENT']
+        env_file = f"../env/{environment}.env"
+
+
+settings = Settings()
