@@ -3,7 +3,7 @@ from datetime import datetime
 
 from src.database.db_engine import metadata
 
-message = Table(
+message_table = Table(
     "message",
     metadata,
     Column('id', Integer, primary_key=True),
