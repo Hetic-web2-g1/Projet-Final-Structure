@@ -1,8 +1,9 @@
-from database.db_engine import engine
 from fastapi import APIRouter
-from types.user import UserCreate, User
-from routers.users import users_srv
 from typing import List
+
+from src.types.user import UserCreate, User
+from src.database.db_engine import engine
+from src.routers.users import users_srv
 
 router = APIRouter(
     prefix="/users",

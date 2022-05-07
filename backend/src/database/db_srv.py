@@ -1,13 +1,12 @@
-from typing import Callable, Optional, TypeVar, Type, Union, Any
-from uuid import UUID
-
 from fastapi.encoders import jsonable_encoder
 from pydantic import parse_obj_as
 from pydantic.main import BaseModel
 import sqlalchemy as sa
 from sqlalchemy.engine import Connection
+from typing import Callable, Optional, TypeVar, Type, Union, Any
+from uuid import UUID
 
-from database.db_engine import metadata
+from src.database.db_engine import metadata
 
 T = TypeVar("T")
 

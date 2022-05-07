@@ -6,10 +6,9 @@ Launch docker config
 
 Launch backend
 
-> cd app && uvicorn main:app --reload
+> export ENVIRONMENT=dev && cd backend && uvicorn main:app --reload
 
 Launch frontend
-
 > cd frontend && npm run dev
 
 Access backend dev: http://localhost:8000
@@ -30,8 +29,8 @@ Install requirement (for dev) without poetry:
 > pip install fastapi uvicorn pydantic sqlalchemy sqlalchemy_utils python-dotenv psycopg2
 
 Can also install with poetry and the pyproject.toml file:
-
+> poetry install
 > poetry shell
 
 Ne pas oublier de rajouter: 
-Fichier env/.env
+Fichier env/dev.env

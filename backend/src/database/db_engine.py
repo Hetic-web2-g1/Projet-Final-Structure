@@ -11,19 +11,14 @@ engine = create_engine(
     connect_args={"options": "-c timezone=utc"}
 )
 
+# Check existence of db, if not, create it
+if not database_exists(engine.url):
+    create_database(engine.url)
 
 # Try except to test db conncection
-
-# A part avoir un success dans les log, ça sert a rien.
-# Il y a deja une erreur de sqlalchemy si il n'arrive pas a se co
 try:
     engine.connect()
     logging.info("DB connection success")
-
-    # Check existence of db, if not, create it
-    if not database_exists(engine.url):
-        create_database(engine.url)
-        logging.info("DB created")
 
 except SQLAlchemyError as err:
     engine.connect()
