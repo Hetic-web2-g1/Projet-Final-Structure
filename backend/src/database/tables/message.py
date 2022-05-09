@@ -1,7 +1,7 @@
 from sqlalchemy import Table, Column, Integer, String, DateTime
 from datetime import datetime
 
-from src.database.db_engine import metadata
+from ..db_engine import metadata
 
 message_table = Table(
     "message",

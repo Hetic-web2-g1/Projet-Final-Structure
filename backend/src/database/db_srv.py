@@ -6,7 +6,7 @@ from sqlalchemy.engine import Connection
 from typing import Callable, Optional, TypeVar, Type, Union, Any
 from uuid import UUID
 
-from src.database.db_engine import metadata
+from .db_engine import metadata
 
 T = TypeVar("T")
 
