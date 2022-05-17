@@ -3,7 +3,7 @@ from typing import List
 
 from src.types.user import UserCreate, User
 from src.database.db_engine import engine
-from src.routers.users import users_srv
+from src.manager import UserManager
 
 router = APIRouter(
     prefix="/users",
@@ -14,13 +14,13 @@ router = APIRouter(
 @router.get("", response_model=List[User])
 def get_all_users():
     with engine.begin() as conn:
-        return users_srv.get_all_users(conn)
+        return list(UserManager.get_all_users(conn))
 
 
 @router.get("/{user_id}", response_model=User | None)
 def get_user(user_id: str):
     with engine.begin() as conn:
-        return users_srv.get_user_by_id(conn, user_id)
+        return UserManager.get_user_by_id(conn, user_id)
 
 
 @router.post("", response_model=User | None)
@@ -39,4 +39,4 @@ def create_user(user: UserCreate):
         'img_path': 'zeremie/zeremie/zeremie/zeremie.zeremie'
     })
     with engine.begin() as conn:
-        return users_srv.create_user(conn, user)
+        return UserManager.create_user(conn, user)
