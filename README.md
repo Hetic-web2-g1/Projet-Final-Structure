@@ -5,7 +5,12 @@ Launch docker config
 > docker-compose up
 
 Launch backend
+> npm run back
+Launch frontend
+> npm run front
 
+Complete Commande
+Launch backend
 > export ENVIRONMENT=dev && cd backend && uvicorn main:app --reload
 
 Launch frontend
@@ -34,3 +39,5 @@ Can also install with poetry and the pyproject.toml file:
 
 Ne pas oublier de rajouter: 
 Fichier env/dev.env
+Commande pour l'updater (a ne pas oublier):
+> export ENVIRONMENT=dev 
