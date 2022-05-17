@@ -1,9 +1,9 @@
 from faker import Faker
 from random import randint
 
-from src.database.db_engine import engine
-from src.types.user import UserCreate
-from src.manager import UserManager
+from database.db_engine import engine
+from types.user import UserCreate
+from manager import UserManager
 
 fake = Faker(locale="fr_FR")
 
