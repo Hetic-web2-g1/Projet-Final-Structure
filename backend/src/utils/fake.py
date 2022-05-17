@@ -1,3 +1,4 @@
+from datetime import datetime
 from faker import Faker
 from random import randint
 
@@ -28,7 +29,7 @@ for _ in range(10):
             'description': fake.text(),
             'sport_level': fake.random_digit(),
             'favorite': [fake.first_name(), fake.first_name()],
-            'date_of_birth': fake.date(),
+            'date_of_birth': datetime.now(),
             'location': coordinate,
             'img_path': fake.file_path(depth=5, category='image')
         })
