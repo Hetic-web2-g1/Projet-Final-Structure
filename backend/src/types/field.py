@@ -1,10 +1,11 @@
 from datetime import datetime
 from typing import List
 from pydantic import BaseModel
+from uuid import UUID
 
 
 class FieldCreate(BaseModel):
-    id_user: int
+    id_user: UUID
     name: str
     description: str
     location: List[int]
@@ -14,6 +15,6 @@ class FieldCreate(BaseModel):
 
 
 class Field(FieldCreate):
-    id: int
+    id: UUID
     created_at: datetime
     edited_at: datetime

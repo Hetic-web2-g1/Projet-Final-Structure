@@ -1,4 +1,6 @@
 from sqlalchemy import Table, Column, Integer, String, DateTime, Boolean, ARRAY
+from sqlalchemy.dialects.postgresql import UUID
+from uuid import uuid4
 from datetime import datetime
 
 from ..db_engine import metadata
@@ -6,7 +8,11 @@ from ..db_engine import metadata
 user_table = Table(
     "user",
     metadata,
-    Column('id', Integer, primary_key=True),
+    Column('id', UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid4,
+        unique=True
+    ),
     Column('is_admin', Boolean),
     Column('pseudo', String()),
     Column('password', String()),
@@ -24,13 +30,21 @@ user_table = Table(
 current_user_table = Table(
     "current_user",
     metadata,
-    Column('id', Integer, primary_key=True),
+    Column('id', UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid4,
+        unique=True
+    ),
     Column('current_user', ARRAY(Integer(), dimensions=1)),
 )
 
 subscribed_user_table = Table(
     "subscribed_user",
     metadata,
-    Column('id', Integer, primary_key=True),
+    Column('id', UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid4,
+        unique=True
+    ),
     Column('subscribed_user', ARRAY(Integer(), dimensions=1)),
 )

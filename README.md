@@ -31,9 +31,10 @@ Access DB: http://localhost:8080
 
 Install requirement (for dev) without poetry:
 
-> pip install fastapi uvicorn pydantic sqlalchemy sqlalchemy_utils python-dotenv psycopg2
+> pip install fastapi uvicorn pydantic sqlalchemy sqlalchemy_utils python-dotenv psycopg2 faker
 
-Can also install with poetry and the pyproject.toml file:
+Can also install with poetry and the pyproject.toml file from the backend:
+> cd backend
 > poetry install
 > poetry shell
 

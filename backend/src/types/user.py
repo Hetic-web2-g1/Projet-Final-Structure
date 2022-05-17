@@ -1,6 +1,7 @@
-from datetime import datetime
+from datetime import datetime, date
 from typing import List
 from pydantic import BaseModel
+from uuid import UUID
 
 
 class UserCreate(BaseModel):
@@ -11,12 +12,12 @@ class UserCreate(BaseModel):
     description: str
     sport_level: int
     favorite: List[str]
-    date_of_birth: datetime
+    date_of_birth: str
     location: List[int]
     img_path: str
 
 
 class User(UserCreate):
-    id: int
+    id: UUID
     created_at: datetime
     edited_at: datetime

@@ -11,7 +11,7 @@ def get_all_users(conn):
         return []
     else:
         for user in result:
-            yield User(**user.data, **user)
+            yield User(**user["data"], **user)
             # On revoie un generateur, si jamais on a besoin de chercher quelque chose dans tous les user, c'est plus opti d'avoir un generateur plutot qu'une liste
 
 
