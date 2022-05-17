@@ -2,7 +2,7 @@ from faker import Faker
 from random import randint
 
 from database.db_engine import engine
-from types.user import UserCreate
+from schema.user import UserCreate
 from manager import UserManager
 
 fake = Faker(locale="fr_FR")
@@ -16,19 +16,20 @@ coordinate.append((long * 10000 + randint(0, 50)) / 10000)
 # coordinate.append((long * 10000 - randint(0, 50)) / 10000)
 coordinate = {48,2,2982}
 
-user = UserCreate(**{
-    'is_admin': fake.boolean(),
-    'pseudo': fake.unique.first_name(),
-    'password': fake.password(),
-    'email': fake.unique.email(),
-    'description': fake.text(),
-    'sport_level': fake.random_digit(),
-    'favorite': [fake.first_name(), fake.first_name()],
-    'date_of_birth': fake.date(),
-    'location': coordinate,
-    'img_path': fake.file_path(depth=5, category='image')
-})
+
 
 for _ in range(10):
     with engine.begin() as conn:
+        user = UserCreate(**{
+            'is_admin': fake.boolean(),
+            'pseudo': fake.unique.first_name(),
+            'password': fake.password(),
+            'email': fake.unique.email(),
+            'description': fake.text(),
+            'sport_level': fake.random_digit(),
+            'favorite': [fake.first_name(), fake.first_name()],
+            'date_of_birth': fake.date(),
+            'location': coordinate,
+            'img_path': fake.file_path(depth=5, category='image')
+        })
         UserManager.create_user(conn, user)
