@@ -10,4 +10,4 @@ router = APIRouter(
 
 @router.get("/")
 def read_root():
-    return [{"msg": "Welcome to the Jungle"}]
+    return [{"msg": "Go away."}]

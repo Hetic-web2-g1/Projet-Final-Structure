@@ -20,8 +20,7 @@ def get_user_by_id(conn: Connection, id: str):
     row = conn.execute(stmt).first()
 
     if row is not None:
-        row = row.__dict__
-        return User(**row['data'], **row)
+        return User(**row)
 
 
 def create_user(conn: Connection, user: UserCreate) -> User | None:
