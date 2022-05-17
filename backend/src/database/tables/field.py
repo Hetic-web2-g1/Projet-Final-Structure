@@ -1,13 +1,19 @@
 from sqlalchemy import Table, Column, Integer, String, DateTime, JSON, ARRAY
 from datetime import datetime
+from sqlalchemy.dialects.postgresql import UUID
+from uuid import uuid4
 
 from ..db_engine import metadata
 
 field_table = Table(
     "field",
     metadata,
-    Column('id', Integer, primary_key=True),
-    Column('id_user', Integer),
+    Column('id', UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid4,
+        unique=True
+    ),
+    Column('id_user', UUID),
     Column('name', String()),
     Column('description', String()),
     Column('location', ARRAY(Integer, dimensions=1)),

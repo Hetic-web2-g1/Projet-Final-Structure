@@ -21,3 +21,5 @@ backend.log
 
 # Package
 package-lock.json
+
+test.py

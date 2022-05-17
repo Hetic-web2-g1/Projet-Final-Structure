@@ -1,16 +1,17 @@
 from pydantic import BaseModel
 from datetime import datetime
+from uuid import UUID
 
 
 class EventCreate(BaseModel):
-    id_user: int
-    id_field: int
+    id_user: UUID
+    id_field: UUID
     name: str
     description: str
     subscripted_users: set
 
 
 class Event(EventCreate):
-    id: int
+    id: UUID
     created_at: datetime
     edited_at: datetime

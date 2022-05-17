@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from src.routers import index, users
 from src.database.db_engine import metadata, engine
 
+# from src.utils.fake import *
+
 metadata.create_all(bind=engine)
 
 
