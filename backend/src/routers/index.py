@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from typing import List
 
-from src.database.db_engine import engine
+from database.db_engine import engine
 
 router = APIRouter(
     prefix="",

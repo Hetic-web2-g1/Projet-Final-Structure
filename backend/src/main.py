@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
-from src.routers import index, users
-from src.database.db_engine import metadata, engine
+from routers import index, users
+from database.db_engine import metadata, engine
 
-# from src.utils.fake import *
+# from utils.fake import *
 
 metadata.create_all(bind=engine)
 

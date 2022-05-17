@@ -4,7 +4,7 @@
   "description": "Launch docker config",
   "main": "index.js",
   "scripts": {
-    "back": "cd backend && uvicorn main:app --reload",
+    "back": "cd backend && cd src && uvicorn main:app --reload",
     "front": "cd frontend && npm run dev"
   },
   "repository": {

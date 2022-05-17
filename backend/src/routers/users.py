@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 from typing import List
 
-from src.types.user import UserCreate, User
-from src.database.db_engine import engine
-from src.manager import UserManager
+from schema.user import UserCreate, User
+from database.db_engine import engine
+from manager import UserManager
 
 router = APIRouter(
     prefix="/users",

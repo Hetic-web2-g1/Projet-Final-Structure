@@ -1,9 +1,9 @@
 import sqlalchemy as sa
 from sqlalchemy.engine import Connection
 
-from src.database import db_srv
-from src.types.user import User, UserCreate
-from src.database.tables.user import user_table
+from database import db_srv
+from schema.user import User, UserCreate
+from database.tables.user import user_table
 
 def get_all_users(conn):
     result = conn.execute(sa.select([user_table]))
