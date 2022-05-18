@@ -9,6 +9,8 @@ from schema.event import EventCreate
 from schema.message import MessageCreate
 from manager.UserManager import create_user
 from manager.FieldManager import create_field
+from manager.EventManager import create_event
+from manager.MessageManager import create_message
 
 fake = Faker(locale="fr_FR")
 
@@ -38,10 +40,24 @@ def create_fake_user():
         })
         create_user(conn, user)
 
+def create_fake_current_user():
+    with engine.begin() as conn:
+        user = UserCreate(**{
+            'data': fake.password(),
+        })
+        create_user(conn, user)
+
+def create_fake_subscribed_user():
+    with engine.begin() as conn:
+        user = UserCreate(**{
+            'data': fake.boolean(),
+        })
+        create_user(conn, user)
+
 def create_fake_field():
     with engine.begin() as conn:
         field = FieldCreate(**{
-            'id_user': '847acc1f-5862-4f3a-9607-69a86b32f83f',
+            'id_user': fake.uuid4(),
             'name': fake.unique.first_name(),
             'description': fake.text(),
             'location': coordinate(),
@@ -50,12 +66,29 @@ def create_fake_field():
         create_field(conn, field)
 
 def create_fake_event():
-    pass
+    with engine.begin() as conn:
+        event = EventCreate(**{
+            'id_user': fake.uuid4(),
+            'id_field': fake.uuid4(),
+            'name': fake.unique.first_name(),
+            'description': fake.text(),
+        })
+        create_event(conn, event)
 
 def create_fake_message():
-    pass
+    with engine.begin() as conn:
+        message = MessageCreate(**{
+            'id_user': fake.uuid4(),
+            'id_field': fake.uuid4(),
+            'id_event': fake.uuid4(),
+            'message_type': 'User',
+            'content': fake.text()
+        })
+        create_message(conn, message)
 
 def create_fake_data():
     for _ in range(10):
         create_fake_user()
         create_fake_field()
+        create_fake_event()
+        create_fake_message()

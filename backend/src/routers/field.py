@@ -23,6 +23,6 @@ def get_user(field_id: str):
     with engine.begin() as conn:
         field =  FieldManager.get_field_by_id(conn, field_id)
         if field is None:
-            raise HTTPException(404, "User not found")
+            raise HTTPException(404, "Field not found")
         else:
             return field
