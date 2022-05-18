@@ -1,5 +1,10 @@
 # Projet-Final-Structure
 
+Ne pas oublier de rajouter: 
+Fichier env/dev.env dans le backend
+Commande pour l'updater (a ne pas oublier):
+> export ENVIRONMENT=dev
+
 Launch docker config
 
 > docker-compose up
@@ -37,8 +42,3 @@ Can also install with poetry and the pyproject.toml file from the backend:
 > cd backend
 > poetry install
 > poetry shell
-
-Ne pas oublier de rajouter: 
-Fichier env/dev.env dans le backend
-Commande pour l'updater (a ne pas oublier):
-> export ENVIRONMENT=dev
