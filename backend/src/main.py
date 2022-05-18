@@ -18,4 +18,4 @@ app.include_router(event.router)
 app.include_router(message.router)
 
 from utils.fake import create_fake_data
-create_fake_data()
+# create_fake_data()

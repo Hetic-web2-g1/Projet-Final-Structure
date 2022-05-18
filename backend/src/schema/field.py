@@ -9,7 +9,7 @@ class FieldCreate(BaseModel):
     name: str
     description: str
     location: List[float]
-    # data: set
+    data: dict
     img_path: str
 
 
