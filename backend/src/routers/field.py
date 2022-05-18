@@ -7,16 +7,9 @@ from schema.field import Field
 from manager import FieldManager
 
 router = APIRouter(
-    prefix="/fields",
-    tags=["Fields"],
+    prefix="/field",
+    tags=["Field"],
 )
-
-
-@router.get("", response_model=List[Field | None])
-def get_all_fields():
-    with engine.begin() as conn:
-        return list(FieldManager.get_all_field(conn))
-
 
 @router.get("/{field_id}", response_model=Field)
 def get_user(field_id: str):

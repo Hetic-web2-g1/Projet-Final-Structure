@@ -7,15 +7,9 @@ from schema.message import Message
 from manager import MessageManager
 
 router = APIRouter(
-    prefix="/messages",
-    tags=["Messages"],
+    prefix="/message",
+    tags=["Message"],
 )
-
-
-@router.get("", response_model=List[Message | None])
-def get_all_messages():
-    with engine.begin() as conn:
-        return list(MessageManager.get_all_messages(conn))
 
 
 @router.get("/{message_id}", response_model=Message)
