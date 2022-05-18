@@ -1,7 +1,7 @@
 from sqlalchemy import Table, Column, Integer, String, DateTime, Boolean, ARRAY
+from datetime import datetime
 from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
-from datetime import datetime
 
 from ..db_engine import metadata
 

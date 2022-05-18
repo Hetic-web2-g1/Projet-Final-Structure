@@ -3,7 +3,7 @@ from fastapi.exceptions import HTTPException
 from typing import List
 
 from database.db_engine import engine
-from schema.field import FieldCreate, Field
+from schema.field import Field
 from manager import FieldManager
 
 router = APIRouter(
