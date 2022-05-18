@@ -13,9 +13,9 @@ message_table = Table(
         default=uuid4,
         unique=True
     ),
-    Column('id_user', UUID, nullable=True),
-    Column('id_field', UUID, nullable=True),
-    Column('id_event', UUID, nullable=True),
+    Column('id_user', UUID(as_uuid=True), nullable=True),
+    Column('id_field', UUID(as_uuid=True), nullable=True),
+    Column('id_event', UUID(as_uuid=True), nullable=True),
     Column('message_type', String()),
     Column('content', String()),
     Column("created_at", DateTime(), default=datetime.utcnow),

@@ -1,7 +1,7 @@
-from sqlalchemy import Table, Column, Integer, String, DateTime, Boolean, ARRAY
+from sqlalchemy import Table, Column, Integer, Float, String, DateTime, Boolean, ARRAY
+from datetime import datetime
 from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
-from datetime import datetime
 
 from ..db_engine import metadata
 
@@ -21,7 +21,7 @@ user_table = Table(
     Column('sport_level', Integer),
     Column('favorite', ARRAY(String(), dimensions=1)),
     Column('date_of_birth', DateTime()),
-    Column('location', ARRAY(Integer, dimensions=1)),
+    Column('location', ARRAY(Float, dimensions=1)),
     Column('img_path', String()),
     Column("created_at", DateTime(), default=datetime.utcnow),
     Column("edited_at", DateTime(), default=datetime.utcnow)
@@ -35,7 +35,7 @@ current_user_table = Table(
         default=uuid4,
         unique=True
     ),
-    Column('current_user', ARRAY(Integer(), dimensions=1)),
+    Column('data', ARRAY(Integer(), dimensions=1)),
 )
 
 subscribed_user_table = Table(
@@ -46,5 +46,5 @@ subscribed_user_table = Table(
         default=uuid4,
         unique=True
     ),
-    Column('subscribed_user', ARRAY(Integer(), dimensions=1)),
+    Column('data', ARRAY(Integer(), dimensions=1)),
 )

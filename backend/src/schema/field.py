@@ -8,10 +8,9 @@ class FieldCreate(BaseModel):
     id_user: UUID
     name: str
     description: str
-    location: List[int]
+    location: List[float]
+    # data: set
     img_path: str
-    created_at: datetime
-    edited_at: datetime
 
 
 class Field(FieldCreate):

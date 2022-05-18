@@ -2,8 +2,8 @@ from fastapi import APIRouter
 from fastapi.exceptions import HTTPException
 from typing import List
 
-from schema.user import UserCreate, User
 from database.db_engine import engine
+from schema.user import UserCreate, User
 from manager import UserManager
 
 router = APIRouter(
