@@ -10,8 +10,6 @@ class FieldCreate(BaseModel):
     description: str
     location: List[int]
     img_path: str
-    created_at: datetime
-    edited_at: datetime
 
 
 class Field(FieldCreate):

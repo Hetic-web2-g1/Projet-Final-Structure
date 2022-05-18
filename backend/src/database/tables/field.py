@@ -13,7 +13,7 @@ field_table = Table(
         default=uuid4,
         unique=True
     ),
-    Column('id_user', UUID),
+    Column('id_user', UUID(as_uuid=True)),
     Column('name', String()),
     Column('description', String()),
     Column('location', ARRAY(Integer, dimensions=1)),

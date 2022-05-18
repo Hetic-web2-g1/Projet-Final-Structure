@@ -13,8 +13,8 @@ event_table = Table(
         default=uuid4,
         unique=True
     ),
-    Column('id_user', UUID),
-    Column('id_field', UUID),
+    Column('id_user', UUID(as_uuid=True)),
+    Column('id_field', UUID(as_uuid=True)),
     Column('name', String()),
     Column('description', String()),
     Column('data', JSON),
