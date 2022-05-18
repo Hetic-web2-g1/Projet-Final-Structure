@@ -41,4 +41,4 @@ Can also install with poetry and the pyproject.toml file from the backend:
 Ne pas oublier de rajouter: 
 Fichier env/dev.env dans le backend
 Commande pour l'updater (a ne pas oublier):
-> export ENVIRONMENT=dev 
+> export ENVIRONMENT=dev
