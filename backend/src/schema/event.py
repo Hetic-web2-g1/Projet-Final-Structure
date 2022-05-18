@@ -8,7 +8,7 @@ class EventCreate(BaseModel):
     id_field: UUID
     name: str
     description: str
-    # data: set
+    data: dict
 
 
 class Event(EventCreate):

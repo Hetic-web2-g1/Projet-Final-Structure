@@ -61,6 +61,7 @@ def create_fake_field():
             'name': fake.unique.first_name(),
             'description': fake.text(),
             'location': coordinate(),
+            'data': {"is_data": "True"},
             'img_path': fake.file_path(depth=5, category='image')
         })
         create_field(conn, field)
@@ -72,6 +73,7 @@ def create_fake_event():
             'id_field': fake.uuid4(),
             'name': fake.unique.first_name(),
             'description': fake.text(),
+            'data': {"is_data": "True"}
         })
         create_event(conn, event)
 
@@ -87,7 +89,7 @@ def create_fake_message():
         create_message(conn, message)
 
 def create_fake_data():
-    for _ in range(10):
+    for _ in range(5):
         create_fake_user()
         create_fake_field()
         create_fake_event()
